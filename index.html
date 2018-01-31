@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Sphelper</title>
+
+    <!-- Required Stylesheets -->
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap-vue.css"/>
+
+    <!-- Required scripts -->
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/polyfill.min.js"></script>
+    <script src="./js/bootstrap-vue.js"></script>
+  </head>
+
+  <body>
+    <!-- Our application root element -->
+    <div id="app">
+      <b-container>
+        <b-navbar toggleable="md" sticky=true type="dark" variant="dark">
+          <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+          <b-navbar-brand href="#" @click="setPage('intro')">Sphelper</b-navbar-brand>
+          <b-navbar-nav>
+            <b-nav-item href="#" @click="setPage('list')">View Spells</b-nav-item>
+            <b-nav-item href="" disabled>List Builder</b-nav-item>
+          </b-navbar-nav>
+
+        </b-navbar>
+        <b-jumbotron v-if="page == 'intro'" fluid=true
+          header="Sphelper"
+          lead="('sfelper' aka. Spell-Helper) Useful utilities for using spells in Starfinder."
+        >
+          <p>This tool is designed to permit convenient viewing of spells from Starfinder, as well as provide some tools to make using those spells easier in your Starfinder games.</p>
+        </b-jumbotron>
+        <div v-if="page == 'list'">
+          <b-card bg-variant="light">
+          <p>By default, the entire list is shown below, alphabetically. You may include/exclude specific levels or classes with the options below. You can also search by spell name. The search is not case-sensitive, and will locate a matching patterns within the name (e.g. all that contain 'mind' in the name, not just those that start with 'mind'). The search is still reduced by the filters applied.</p>
+            <b-list-group>
+            <b-list-item class="p-1"><b-button-group>
+              <b-button disabled variant="info">Show</b-button>
+              <b-button variant="info" @click="showAll()">All</b-button>
+              <b-button variant="info" @click="showNone()">None</b-button>
+            </b-button-group></b-list-item>
+            <b-list-item class="p-1"><b-button-group>
+              <b-button disabled variant="danger" v-if="warnClassSelection()">Toggle classes</b-button>
+              <b-button disabled variant="info" v-else>Toggle classes</b-button>
+              <b-button variant="primary" :pressed="showMystic" @click="toggleClass('mystic')">Mystic</b-button>
+              <b-button variant="primary" :pressed="showTechno" @click="toggleClass('technomancer')">Technomancer</b-button>
+            </b-button-group></b-list-item>
+            <b-list-item class="p-1"><b-button-group>
+              <b-button disabled variant="danger" v-if="warnLevelSelection()">Toggle levels</b-button>
+              <b-button disabled variant="primary" v-else>Toggle levels</b-button>
+              <b-button variant="primary" v-for="item in levels" :pressed.sync="item.state" :key="item.name">
+                {{item.name}}
+              </b-button>
+            </b-button-group></b-list-item>
+            <b-list-item class="p-1">
+              <b-form inline  @keydown.enter.prevent="" @keyup.enter="searchSpells">
+                <b-form-input id="searchInput" type="text" placeholder="Type a spell name"></b-form-input>
+                <b-button-group class="px-1">
+                  <b-button variant="primary" @click="searchSpells()">Search</b-button>
+                  <b-button variant="secondary" @click="clearForm()">Clear</b-button>
+                </b-button-group>
+              </b-form>
+            </b-list-item>
+          </b-card>
+          <div v-for="(item, index) in spells">
+            <b-card class="p-1" v-show="displaySpell(index)"
+              v-bind:title="item.name"
+              v-bind:sub-title="'Level ' + item.level + ' | ' + item.school"
+            >
+              <p class="card-text">
+                <b-badge v-if="item.mystic !=undefined" variant="info">Mystic</b-badge> 
+                <b-badge v-if="item.technomancer !=undefined" variant="info">Technomancer</b-badge> <br>
+                {{item.shortText}}
+              </p>
+              <b-btn v-b-toggle="item.name" variant="secondary" size="sm">Details</b-btn>
+              <b-btn v-if="item.related != undefined" v-b-toggle="item.name + 'rel'" variant="secondary" size="sm">Related Spells</b-btn>
+              <b-collapse v-bind:id="item.name" class="py-2">
+                <b-card no-body bg-variant="light"
+                  v-bind:footer="item.source + ' ' + item.page"
+                >
+                <b-list-group flush>
+                  <b-list-group-item variant="secondary" v-if="item.castingTime != undefined"><b>Casting Time</b> {{item.castingTime}}</b-list-group-item>
+                  <b-list-group-item variant="secondary" v-if="item.range != undefined"><b>Range</b> {{item.range}}</b-list-group-item>
+                  <b-list-group-item variant="secondary" v-if="item.target != undefined"><b>Target</b> {{item.target}}</b-list-group-item>
+                  <b-list-group-item variant="secondary" v-if="item.effect != undefined"><b>Effect</b> {{item.effect}}</b-list-group-item>
+                  <b-list-group-item variant="secondary" v-if="item.duration != undefined"><b>Duration</b> {{item.duration}}</b-list-group-item>
+                  <b-list-group-item variant="secondary" v-if="item.save != undefined"><b>Saving Throw</b> {{item.save}}</b-list-group-item>
+                  <b-list-group-item variant="secondary" v-if="item.resistance != undefined"><b>Spell Resistance</b> {{item.resistance}}</b-list-group-item>
+                </b-list-group>
+                <b-card-body>
+                  <p class="card-text">{{item.longText}}</p>
+                </b-card-body>
+                </b-card>
+              </b-collapse>
+              <b-collapse class="py-2" v-if="item.related != undefined" v-bind:id="item.name + 'rel'">
+                <b-card bg-variant="light">
+                  <b-container class="bg-light p-0" v-for="(it1, in1) in item.related">
+                    <b-row class="p-0" class="bg-light">
+                      <b-col cols="1" class="bg-light"><b>{{in1}}</b></b-col>
+                      <b-col class="bg-light" v-for="i in item.related[in1]">{{i}}</b-col>
+                    </b-row>
+                  </b-container>
+                </b-card>
+              </b-collapse>
+            </b-card>
+          </div>
+        </div>
+      </b-container>
+    </div>
+
+    <!-- Start running your app -->
+    <script src="./app.js"></script>
+  </body>
+</html>

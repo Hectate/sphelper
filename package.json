@@ -1,0 +1,11 @@
+{
+  "name": "sphelper",
+  "version": "1.0.0",
+  "description": "Sphelper is a \"Spell Helper\" for Starfinder (Paizo's TTRPG) players and GMs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
