@@ -2,17 +2,17 @@ var data = {
   application:{majorVer:'0',minorVer:'1'},
   page:'intro',
   levels: {
-    "0":{name:"0",state:true},
-    "1":{name:"1",state:true},
-    "2":{name:"2",state:true},
-    "3":{name:"3",state:true},
-    "4":{name:"4",state:true},
-    "5":{name:"5",state:true},
-    "6":{name:"6",state:true},
-    "s":{name:"Special",state:true}
+    "0":{name:"0",state:false},
+    "1":{name:"1",state:false},
+    "2":{name:"2",state:false},
+    "3":{name:"3",state:false},
+    "4":{name:"4",state:false},
+    "5":{name:"5",state:false},
+    "6":{name:"6",state:false},
+    "s":{name:"Special",state:false}
   },
-  showMystic:true,
-  showTechno:true,
+  showMystic:false,
+  showTechno:false,
   formInput:''
 };
 data.spells =
