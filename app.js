@@ -1,4 +1,5 @@
 var data = {
+  application:{majorVer:'0',minorVer:'1'},
   page:'intro',
   levels: {
     "0":{name:"0",state:true},
