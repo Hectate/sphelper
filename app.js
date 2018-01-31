@@ -466,7 +466,7 @@ data.spells =
       "target": "One nonmagical nontechnological object of nonliving matter up to (CASTERLEVEL) bulk; see text",
       "technomancer": "4",
       "related":{
-        "5":["Creation (Level 5"]
+        "5":["Creation (Level 5)"]
       }
     },
     {
