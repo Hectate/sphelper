@@ -25,11 +25,12 @@
         <b-navbar toggleable="md" sticky=true type="dark" variant="dark">
           <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
           <b-navbar-brand href="#" @click="setPage('intro')">Sphelper</b-navbar-brand>
-          <b-navbar-nav>
-            <b-nav-item href="#" @click="setPage('list')">View Spells</b-nav-item>
-            <b-nav-item href="" disabled>List Builder</b-nav-item>
-          </b-navbar-nav>
-
+          <b-collapse is-nav id="nav_collapse">
+            <b-navbar-nav>
+              <b-nav-item href="#" @click="setPage('list')">View Spells</b-nav-item>
+              <b-nav-item href="" disabled>List Builder</b-nav-item>
+            </b-navbar-nav>
+          </b-collapse>
         </b-navbar>
         <b-jumbotron v-if="page == 'intro'" fluid=true
           header="Sphelper"
@@ -113,6 +114,9 @@
               </b-collapse>
             </b-card>
           </div>
+        </div>
+        <div v-if="page == 'builder'">
+
         </div>
       </b-container>
     </div>
