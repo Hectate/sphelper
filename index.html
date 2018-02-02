@@ -28,7 +28,7 @@
           <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav>
               <b-nav-item href="#" @click="setPage('list')">View Spells</b-nav-item>
-              <b-nav-item href="" disabled>List Builder</b-nav-item>
+              <b-nav-item href="" @click="setPage('builder')">List Builder</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
@@ -72,8 +72,9 @@
               </b-form>
             </b-list-item>
           </b-card>
-          <div v-for="(item, index) in spells">
+          <div v-for="(item, index) in spells" class="py-1">
             <b-card class="p-1" v-show="displaySpell(index)"
+              border-variant="primary"
               v-bind:title="item.name"
               v-bind:sub-title="'Level ' + item.level + ' | ' + item.school"
             >
@@ -116,7 +117,52 @@
           </div>
         </div>
         <div v-if="page == 'builder'">
-
+          <b-card bg-variant="light">
+            <p>The List Builder helps you maintain a collection of known spells for a spellcaster. To get started, create a new list and fill in the blanks. Once the builder has enough information, it will allow you to begin selecting appropriate spells. If the character has multiple classes, please keep in mind the difference between caster level and character level.</p>
+            <p>The List Builder will store your selections in your browser's Local Storage; it is not yet possible to export/import, or carry existing setups to other devices (e.g. computer to phone).</p>
+          <b-btn @click="addCharacter()" variant="primary">Add character</b-btn>
+          </b-card>
+          <div v-for="(item, index) in characters" class="py-1">
+            <b-card bg-variant="defult" border-variant="primary"
+              no-body
+              v-bind:header="item.name + ' - Level ' + item.level + ' ' + item.class"
+            >
+              <b-tabs card >
+                <b-tab title="Character Info" active>
+                  <b-form>
+                    <b-form-group id="char_name_group" label="Name" label-for="char_name_input" horizontal>
+                      <b-form-input id="char_name_input" type="text" v-model="item.name" placeholder="Name">
+                      </b-form-input>
+                    </b-form-group>
+                  </b-form>
+                  <b-form>
+                    <b-form-group label="Class" label-for="char_class_select" horizontal>
+                      <b-form-select id="char_class_select" v-model="item.class" :options="charClasses">
+                      </b-form-select>
+                    </b-form-group>
+                  </b-form>
+                  <b-form>
+                    <b-form-group label="Caster Level" label-for="char_level_select" horizontal>
+                      <b-form-select id="char_level_select" v-model="item.level" :options="charLevels">
+                      </b-form-select>
+                    </b-form-group>
+                  </b-form>
+                  <b-form>
+                    <b-form-group v-bind:label="getAbility(item.class) + ' Bonus'" label-for="char_abil_input" horizontal>
+                      <b-form-input id="char_abil_input" type="number" v-model="item.abilityBonus">
+                      </b-form-input>
+                    </b-form-group>
+                  </b-form>
+                </b-tab>
+                <b-tab title="Spell Selector">
+                  <p v-if="item.class == ''"><span class="text-danger">You must select a class in the Character Info section first.</span></p>
+                  <p v-if="item.level == 0"><span class="text-danger">You must have 1 or more levels in the class under Character Info.</span></p>
+                </b-tab>
+                <b-tab title="Known Spell List">
+                  <p v-if="item.spells.length == 0"><span class="text-danger">You must select some spells first in the Spell Selector.</span></p>
+                </b-tab>
+            </b-card>
+          </div>
         </div>
       </b-container>
     </div>

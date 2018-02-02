@@ -13,7 +13,11 @@ var data = {
   },
   showMystic:false,
   showTechno:false,
-  formInput:''
+  formInput:'',
+  characters:{},
+  charClasses:['Mystic','Technomancer'],
+  keyAbility:{'Mystic':'Wisdom','Technomancer':'Intelligence'},
+  charLevels:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 };
 data.spells =
   [
@@ -3832,6 +3836,26 @@ var app = new Vue({
     }
   },
   methods: {
+    addCharacter: function() {
+      var uid = getUID();
+      Vue.set(this.characters,uid,{
+        'id':uid,
+        'name':'',
+        'class':'',
+        'level':0,
+        'abilityBonus':0,
+        'spells':[]
+      });
+    },
+    getAbility: function (charClass) {
+      var abil = 'Key Ability';
+      for(var i in this.keyAbility) {
+        if(charClass == i) {
+          abil = this.keyAbility[charClass];
+        }
+      }
+      return abil;
+    },
     setPage: function(name) {
       this.page = name;
       localStorage.setItem('page',name);
@@ -3909,3 +3933,12 @@ var app = new Vue({
     }
   }
 });
+
+function getUID() {
+  var id = 'id-' + Math.random().toString(36).substr(2, 16);
+  if(app.characters[id] != undefined) {
+    //Houston we have a problem!
+    id = getUID();
+  }
+  return id;
+};
