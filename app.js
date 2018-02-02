@@ -1,5 +1,5 @@
 var data = {
-  application:{majorVer:'0',minorVer:'1'},
+  application:{majorVer:'0',minorVer:'5'},
   page:'intro',
   levels: {
     "0":{name:"0",state:false},
@@ -3846,6 +3846,9 @@ var app = new Vue({
         'abilityBonus':0,
         'spells':[]
       });
+    },
+    deleteCharacter: function (id) {
+      delete this.characters[id];
     },
     getAbility: function (charClass) {
       var abil = 'Key Ability';

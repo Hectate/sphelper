@@ -153,6 +153,12 @@
                       </b-form-input>
                     </b-form-group>
                   </b-form>
+                  <div>
+                    <b-btn v-b-modal="'deleteChar'" variant="danger">Delete Character</b-btn>
+                    <b-modal id="deleteChar" title="Delete this character?" centered>
+                      <p class="my-4">Are you sure you want to delete this character?</p>
+                    </b-modal>
+                  </div>
                 </b-tab>
                 <b-tab title="Spell Selector">
                   <p v-if="item.class == ''"><span class="text-danger">You must select a class in the Character Info section first.</span></p>
@@ -166,7 +172,6 @@
         </div>
       </b-container>
     </div>
-
     <!-- Start running your app -->
     <script src="./app.js"></script>
   </body>
