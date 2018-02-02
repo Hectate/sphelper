@@ -125,7 +125,7 @@
           <div v-for="(item, index) in characters" class="py-1">
             <b-card bg-variant="defult" border-variant="primary"
               no-body
-              v-bind:header="item.name + ' - Level ' + item.level + ' ' + item.class"
+              v-bind:header="item.name + ' (Level ' + item.level + ' ' + item.class + ')'"
             >
               <b-tabs card >
                 <b-tab title="Character Info" active>
@@ -154,9 +154,17 @@
                     </b-form-group>
                   </b-form>
                   <div>
-                    <b-btn v-b-modal="'deleteChar'" variant="danger">Delete Character</b-btn>
-                    <b-modal id="deleteChar" title="Delete this character?" centered>
-                      <p class="my-4">Are you sure you want to delete this character?</p>
+                    <b-btn v-b-modal="'deleteChar_' + index" variant="danger">Delete Character</b-btn>
+                    <span class="text-muted">{{item.id}}</span>
+                    <b-modal 
+                        v-bind:id="'deleteChar_' + index" 
+                        title="Delete this character?" 
+                        centered 
+                        ok-variant="danger" 
+                        ok-title="Yes, Delete"
+                        @ok="deleteCharacter(index)">
+                      <p class="my-4">Are you sure you want to delete {{item.name}}?</p>
+                      <p class="text-muted">({{item.id}})</p>
                     </b-modal>
                   </div>
                 </b-tab>
