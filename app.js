@@ -19,6 +19,370 @@ var data = {
   keyAbility:{'Mystic':'Wisdom','Technomancer':'Intelligence'},
   charLevels:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 };
+data.MysticCount = {
+  "1": {
+    "s0": "4",
+    "s1": "2",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "2": {
+    "s0": "5",
+    "s1": "3",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "3": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "4": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "2",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "5": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "3",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "6": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "4",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "7": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "2",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "8": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "3",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "9": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "4",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "10": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "5",
+    "s3": "4",
+    "s4": "2",
+    "s5": "0",
+    "s6": "0"
+  },
+  "11": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "4",
+    "s4": "3",
+    "s5": "0",
+    "s6": "0"
+  },
+  "12": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "4",
+    "s4": "4",
+    "s5": "0",
+    "s6": "0"
+  },
+  "13": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "5",
+    "s4": "4",
+    "s5": "2",
+    "s6": "0"
+  },
+  "14": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "4",
+    "s5": "3",
+    "s6": "0"
+  },
+  "15": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "4",
+    "s5": "4",
+    "s6": "0"
+  },
+  "16": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "5",
+    "s5": "4",
+    "s6": "2"
+  },
+  "17": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "4",
+    "s6": "3"
+  },
+  "18": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "4",
+    "s6": "4"
+  },
+  "19": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "5",
+    "s6": "4"
+  },
+  "20": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "6",
+    "s5": "5",
+    "s6": "5"
+  }
+}
+data.TechnomancerCount = {
+  "1": {
+    "s0": "4",
+    "s1": "2",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "2": {
+    "s0": "5",
+    "s1": "3",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "3": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "4": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "2",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "5": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "3",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "6": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "4",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "7": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "2",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "8": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "3",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "9": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "4",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "10": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "5",
+    "s3": "4",
+    "s4": "2",
+    "s5": "0",
+    "s6": "0"
+  },
+  "11": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "4",
+    "s4": "3",
+    "s5": "0",
+    "s6": "0"
+  },
+  "12": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "4",
+    "s4": "4",
+    "s5": "0",
+    "s6": "0"
+  },
+  "13": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "5",
+    "s4": "4",
+    "s5": "2",
+    "s6": "0"
+  },
+  "14": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "4",
+    "s5": "3",
+    "s6": "0"
+  },
+  "15": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "4",
+    "s5": "4",
+    "s6": "0"
+  },
+  "16": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "5",
+    "s5": "4",
+    "s6": "2"
+  },
+  "17": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "4",
+    "s6": "3"
+  },
+  "18": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "4",
+    "s6": "4"
+  },
+  "19": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "5",
+    "s6": "4"
+  },
+  "20": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "6",
+    "s5": "5",
+    "s6": "5"
+  }
+}
 data.spells =
   [
     {
@@ -3836,6 +4200,61 @@ var app = new Vue({
     }
   },
   methods: {
+    getSpellCounts: function (charClass,charLevel) {
+      if(charClass == '' || charClass == undefined) {
+        return [];
+      }
+      else if(parseInt(charLevel) == undefined || parseInt(charLevel) < 1) {
+        return [];
+      }
+      else return this[charClass + 'Count'][charLevel];
+    },
+    returnLevel: function(input) {
+      return parseInt(input[1]);
+    },
+    getSpellIndexFromName: function(name) {
+      for(var i in this.spells) {
+        if (this.spells[i].name == name) {
+          return i;
+        }
+      }
+      console.error('getSpellIndexFromName could not find "' + name + '".');
+    },
+    getVariantFromClass: function(spell,charClass) {
+      if(this.spells[this.getSpellIndexFromName(spell)][charClass.toLowerCase()] != undefined) {
+        return 'light';
+      }
+      else return 'danger';
+    },
+    addToCharSpellList: function (charIndex,charClass,level,event) {
+      if(event != undefined) { 
+        this.characters[charIndex].spells[level].push({cls:charClass,name:event});
+      }
+    },
+    removeFromCharSpellList: function (charIndex,level,spell) {
+      this.characters[charIndex].spells[level].splice(spell,1);
+    },
+    returnRemainingSpellCount: function(count,charIndex,level) {
+      return parseInt(count) - this.characters[charIndex].spells[level].length;
+    },
+    returnLimitedSpellList: function(index,charClass,level) {
+      var array = [];
+      var skip = false;
+      for(var i in this.spells) {
+        if(this.spells[i][charClass.toLowerCase()] != undefined) {
+          if(this.spells[i][charClass.toLowerCase()] == level) {
+            for(var ii in this.characters[index].spells[level]) {
+              if(this.characters[index].spells[level][ii].name == this.spells[i].name) {
+                skip = true;
+              }
+            }
+            if(!skip) { array.push(this.spells[i].name); }
+            else skip = false;
+          }
+        }
+      }
+      return array;
+    },
     addCharacter: function() {
       var uid = getUID();
       this.characters.push({
@@ -3844,7 +4263,7 @@ var app = new Vue({
         'class':'',
         'level':0,
         'abilityBonus':0,
-        'spells':[]
+        'spells':[[],[],[],[],[],[],[]]
       });
     },
     deleteCharacter: function (index) {

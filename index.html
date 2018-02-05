@@ -171,9 +171,29 @@
                 <b-tab title="Spell Selector">
                   <p v-if="item.class == ''"><span class="text-danger">You must select a class in the Character Info section first.</span></p>
                   <p v-if="item.level == 0"><span class="text-danger">You must have 1 or more levels in the class under Character Info.</span></p>
+                  <b-list-group flush v-for="(it1, in1) in getSpellCounts(item.class,item.level)">
+                    <b-list-group-item v-if="it1 > 0">
+                      <h5><b-link v-b-toggle="item.id + '_' + in1 + '_collapse'">Level {{returnLevel(in1)}} Spells: {{returnRemainingSpellCount(it1,index,returnLevel(in1))}} to select</b-link></h5>
+                      <b-collapse v-bind:id="item.id + '_' + in1 + '_collapse'">
+                        <b-card no-body variant="light">
+                          <b-list-group flush variant="light">
+                            <div v-for="(it2,in2) in item.spells[returnLevel(in1)]">
+                              <b-list-group-item v-bind:variant="getVariantFromClass(it2.name,item.class)">
+                                {{it2.name}}
+                                <b-button-close text-variant="danger" size="sm" @click="removeFromCharSpellList(index,returnLevel(in1),in2)"></b-button-close>
+                              </b-list-group-item>
+                            </div>
+                            <b-list-group-item variant="primary" v-show="returnLimitedSpellList(index,item.class,returnLevel(in1)).length > 0">
+                              <b-form-select v-bind:id="item.id + '_' + in1 + '_spell'" @change="addToCharSpellList(index,item.class,returnLevel(in1),$event)" :options="returnLimitedSpellList(index,item.class,returnLevel(in1))">
+                              </b-form-select>
+                            </b-list-group-item>
+                          </b-list-group>
+                        </b-card>
+                      </b-collapse>
+                    </b-list-group-item>
                 </b-tab>
                 <b-tab title="Known Spell List">
-                  <p v-if="item.spells.length == 0"><span class="text-danger">You must select some spells first in the Spell Selector.</span></p>
+                  <p>Known Spell management will go here; someday!</p>
                 </b-tab>
             </b-card>
           </div>
