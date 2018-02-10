@@ -91,7 +91,7 @@
                   <b-list-group flush v-for="(it2,in2) in characters">
                     <b-list-group-item flush variant="secondary">
                       {{it2.name}} (Level {{it2.level}} {{it2.class}})
-                      <b-btn class="px-1" v-bind:disabled="isNotCorrectClass(item,it2.class)" @click="addToCharSpellList(in2,it2.class,item.level,item.name)">Add to Known Spells</b-btn>
+                      <b-btn class="px-1" v-bind:disabled="isNotCorrectClass(item,it2.class) || alreadyInSpellList(in2,it2.class,item.level,item.name)" @click="addToCharSpellList(in2,it2.class,item.level,item.name)">Add to Known Spells</b-btn>
                     </b-list-group-item>
                   </b-list-group>
                 </b-card>

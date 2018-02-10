@@ -4198,6 +4198,9 @@ var app = new Vue({
     if(localStorage.getItem('page') != null) {
       this.page = localStorage.getItem('page');
     }
+    if(localStorage.getItem('characters') != null) {
+      this.characters = localStorage.getItem('characters');
+    }
   },
   methods: {
     getSpellCounts: function (charClass,charLevel) {
@@ -4226,9 +4229,23 @@ var app = new Vue({
       }
       else return 'danger';
     },
+    alreadyInSpellList: function(charIndex,charClass,level,event) {
+      var response = false;
+      if(event != undefined) {
+        for(var i in this.characters[charIndex].spells[level]) {
+          if(this.characters[charIndex].spells[level][i].name == event) {
+            response = true;
+          }
+        }
+      }
+      return response;
+    },
     addToCharSpellList: function (charIndex,charClass,level,event) {
-      if(event != undefined) { 
-        this.characters[charIndex].spells[level].push({cls:charClass,name:event});
+      if(event != undefined) {
+        if(this.alreadyInSpellList(charIndex,charClass,level,event) == false) {
+          this.characters[charIndex].spells[level].push({cls:charClass,name:event});
+          
+        }
       }
     },
     removeFromCharSpellList: function (charIndex,level,spell) {
@@ -4365,6 +4382,10 @@ var app = new Vue({
     clearForm: function() {
       document.getElementById('searchInput').value = '';
       this.formInput = '';
+    },
+    saveData: function() {
+      localStorage.setItem('characters',this.characters);
+      localStorage.setItem('majorVer',this.application.majorVer);
     }
   }
 });
