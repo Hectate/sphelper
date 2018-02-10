@@ -1,5 +1,6 @@
+var unsaved = false;
 var data = {
-  application:{majorVer:'0',minorVer:'5'},
+  application:{majorVer:'0',minorVer:'6'},
   page:'intro',
   levels: {
     "0":{name:"0",state:false},
@@ -4195,11 +4196,13 @@ var app = new Vue({
   el: '#app',
   data:data,
   created: function () {
-    if(localStorage.getItem('page') != null) {
-      this.page = localStorage.getItem('page');
-    }
-    if(localStorage.getItem('characters') != null) {
-      this.characters = localStorage.getItem('characters');
+    if(this.application.majorVer == localStorage.getItem('majorVer')) {
+      if(localStorage.getItem('page') != undefined) {
+        this.page = localStorage.getItem('page');
+      }
+      if(localStorage.getItem('characters') != undefined) {
+        this.characters = JSON.parse(localStorage.getItem('characters'));
+      }
     }
   },
   methods: {
@@ -4244,12 +4247,13 @@ var app = new Vue({
       if(event != undefined) {
         if(this.alreadyInSpellList(charIndex,charClass,level,event) == false) {
           this.characters[charIndex].spells[level].push({cls:charClass,name:event});
-          
+          unsaved = true;
         }
       }
     },
     removeFromCharSpellList: function (charIndex,level,spell) {
       this.characters[charIndex].spells[level].splice(spell,1);
+      unsaved = true;
     },
     isNotCorrectClass: function (spell,charClass) {
       if(spell.technomancer != undefined) {
@@ -4295,9 +4299,11 @@ var app = new Vue({
         'abilityBonus':0,
         'spells':[[],[],[],[],[],[],[]]
       });
+      unsaved = true;
     },
     deleteCharacter: function (index) {
       this.characters.splice(index,1);
+      unsaved = true;
     },
     getAbility: function (charClass) {
       var abil = 'Key Ability';
@@ -4384,8 +4390,9 @@ var app = new Vue({
       this.formInput = '';
     },
     saveData: function() {
-      localStorage.setItem('characters',this.characters);
+      localStorage.setItem('characters',JSON.stringify(this.characters));
       localStorage.setItem('majorVer',this.application.majorVer);
+      unsaved = false;
     }
   }
 });
@@ -4394,3 +4401,11 @@ function getUID() {
   var id = 'id-' + Math.random().toString(36).substr(2, 16);
   return id;
 };
+
+function unloadPage(){ 
+    if(unsaved){
+        return "You have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?";
+    }
+}
+
+window.onbeforeunload = unloadPage;

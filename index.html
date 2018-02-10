@@ -130,8 +130,9 @@
         <div v-if="page == 'builder'">
           <b-card bg-variant="light">
             <p>The List Builder helps you maintain a collection of known spells for a spellcaster. To get started, create a new list and fill in the blanks. Once the builder has enough information, it will allow you to begin selecting appropriate spells. If the character has multiple classes, please keep in mind the difference between caster level and character level.</p>
-            <p>The List Builder will eventually (not yet) store your selections in your browser's Local Storage; it is not yet possible to export/import, or carry existing setups to other devices (e.g. computer to phone).</p>
+            <p>Clicking Save Characters will store your selections in your browser's Local Storage; it is not yet possible to export/import, or carry existing setups to other devices (e.g. computer to phone). If there is a major version difference between what you have saved the characters as, the data will not be loaded (and it will be over-written by clicking Save Characters!).</p>
           <b-btn @click="addCharacter()" variant="primary">Add character</b-btn>
+          <b-btn @click="saveData()" variant="primary">Save Characters</b-btn>
           </b-card>
           <div v-for="(item, index) in characters" class="py-1">
             <b-card bg-variant="defult" border-variant="primary"
