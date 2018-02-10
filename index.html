@@ -72,7 +72,7 @@
               </b-form>
             </b-list-item>
           </b-card>
-          <div v-for="(item, index) in spells" class="py-1">
+          <div v-for="(item, index) in spells" class="my-1">
             <b-card class="p-1" v-show="displaySpell(index)"
               border-variant="primary"
               v-bind:title="item.name"
@@ -85,6 +85,17 @@
               </p>
               <b-btn v-b-toggle="item.name" variant="secondary" size="sm">Details</b-btn>
               <b-btn v-if="item.related != undefined" v-b-toggle="item.name + 'rel'" variant="secondary" size="sm">Related Spells</b-btn>
+              <b-btn v-if="characters.length > 0" v-b-toggle="item.name + 'chars'" variant="secondary" size="sm">Characters</b-btn>
+              <b-collapse v-bind:id="item.name +'chars'" class="py-2">
+                <b-card no-body bg-varient="light">
+                  <b-list-group flush v-for="(it2,in2) in characters">
+                    <b-list-group-item flush variant="secondary">
+                      {{it2.name}} (Level {{it2.level}} {{it2.class}})
+                      <b-btn class="px-1" v-bind:disabled="isNotCorrectClass(item,it2.class)" @click="addToCharSpellList(in2,it2.class,item.level,item.name)">Add to Known Spells</b-btn>
+                    </b-list-group-item>
+                  </b-list-group>
+                </b-card>
+              </b-collapse>
               <b-collapse v-bind:id="item.name" class="py-2">
                 <b-card no-body bg-variant="light"
                   v-bind:footer="item.source + ' ' + item.page"

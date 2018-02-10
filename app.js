@@ -4234,6 +4234,19 @@ var app = new Vue({
     removeFromCharSpellList: function (charIndex,level,spell) {
       this.characters[charIndex].spells[level].splice(spell,1);
     },
+    isNotCorrectClass: function (spell,charClass) {
+      if(spell.technomancer != undefined) {
+        if(charClass.toLowerCase() == 'technomancer') {
+          return false;
+        }
+      }
+      if(spell.mystic != undefined) {
+        if(charClass.toLowerCase() == 'mystic') {
+          return false;
+        }
+      }
+      return true;
+    },
     returnRemainingSpellCount: function(count,charIndex,level) {
       return parseInt(count) - this.characters[charIndex].spells[level].length;
     },
