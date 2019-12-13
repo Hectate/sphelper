@@ -37,8 +37,18 @@
           lead="('sfelper' aka. Spell-Helper) Useful utilities for using spells in Starfinder."
         >
           <p>This tool is designed to permit convenient viewing of spells from Starfinder, as well as provide some tools to make using those spells easier in your Starfinder games.</p>
-          <p><i>Version {{application.majorVer}}.{{application.minorVer}}</i> | Author: Nathaniel 'Hectate' Mitchell | Released under MIT license, 2018</p>
-          <p><b-link href="https://github.com/Hectate/sphelper">View on Github</b-link></p>
+          <p><i>Version {{application.majorVer}}.{{application.minorVer}}</i> | Author: Nathaniel 'Hectate' Mitchell | Released under MIT license, 2018-2019</p>
+          <p><b-link href="https://github.com/Hectate/sphelper"><img src="Github-Mark-32px.png"> View on Github</b-link></p>
+          <b-button v-b-toggle.changelog variant="primary">View Changelog</b-button>
+          <b-collapse id="changelog">
+              <dl>
+                <dt>v0.8 : ??? 20XX</dt>
+                <dd>Added Witchwarper class support</dd>
+                <dt>v0.6 : Jan 31, 2018</dt>
+                <dd>Initial Public Release</dd>
+                <dd>Mystic and Technomancer class support, spell lists, list builder, etc</dd>
+              </dl>
+          </b-collapse>
         </b-jumbotron>
         <div v-if="page == 'list'">
           <b-card bg-variant="light">
@@ -54,6 +64,7 @@
               <b-button disabled variant="info" v-else>Toggle classes</b-button>
               <b-button variant="primary" :pressed="showMystic" @click="toggleClass('mystic')">Mystic</b-button>
               <b-button variant="primary" :pressed="showTechno" @click="toggleClass('technomancer')">Technomancer</b-button>
+              <b-button disabled variant="primary" :pressed="showWitch" @click="toggleClass('witchwarper')">Witchwarper</b-button>
             </b-button-group></b-list-item>
             <b-list-item class="p-1"><b-button-group>
               <b-button disabled variant="danger" v-if="warnLevelSelection()">Toggle levels</b-button>
@@ -80,7 +91,8 @@
             >
               <p class="card-text">
                 <b-badge v-if="item.mystic !=undefined" variant="info">Mystic</b-badge> 
-                <b-badge v-if="item.technomancer !=undefined" variant="info">Technomancer</b-badge> <br>
+                <b-badge v-if="item.technomancer !=undefined" variant="info">Technomancer</b-badge>
+                <b-badge v-if="item.witchwarper !=undefined" variant="info">Witchwarper</b-badge> <br>
                 {{item.shortText}}
               </p>
               <b-btn v-b-toggle="item.name" variant="secondary" size="sm">Details</b-btn>

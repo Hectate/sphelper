@@ -1,6 +1,6 @@
 var unsaved = false;
 var data = {
-  application:{majorVer:'0',minorVer:'6'},
+  application:{majorVer:'0',minorVer:'8'},
   page:'intro',
   levels: {
     "0":{name:"0",state:false},
@@ -14,10 +14,11 @@ var data = {
   },
   showMystic:false,
   showTechno:false,
+  showWitch:false,
   formInput:'',
   characters:[],
-  charClasses:['Mystic','Technomancer'],
-  keyAbility:{'Mystic':'Wisdom','Technomancer':'Intelligence'},
+  charClasses:['Mystic','Technomancer','Witchwarper'],
+  keyAbility:{'Mystic':'Wisdom','Technomancer':'Intelligence','Witchwarper':'Charisma'},
   charLevels:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 };
 data.MysticCount = {
@@ -203,6 +204,188 @@ data.MysticCount = {
   }
 }
 data.TechnomancerCount = {
+  "1": {
+    "s0": "4",
+    "s1": "2",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "2": {
+    "s0": "5",
+    "s1": "3",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "3": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "0",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "4": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "2",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "5": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "3",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "6": {
+    "s0": "6",
+    "s1": "4",
+    "s2": "4",
+    "s3": "0",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "7": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "2",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "8": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "3",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "9": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "4",
+    "s3": "4",
+    "s4": "0",
+    "s5": "0",
+    "s6": "0"
+  },
+  "10": {
+    "s0": "6",
+    "s1": "5",
+    "s2": "5",
+    "s3": "4",
+    "s4": "2",
+    "s5": "0",
+    "s6": "0"
+  },
+  "11": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "4",
+    "s4": "3",
+    "s5": "0",
+    "s6": "0"
+  },
+  "12": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "4",
+    "s4": "4",
+    "s5": "0",
+    "s6": "0"
+  },
+  "13": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "5",
+    "s3": "5",
+    "s4": "4",
+    "s5": "2",
+    "s6": "0"
+  },
+  "14": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "4",
+    "s5": "3",
+    "s6": "0"
+  },
+  "15": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "4",
+    "s5": "4",
+    "s6": "0"
+  },
+  "16": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "5",
+    "s4": "5",
+    "s5": "4",
+    "s6": "2"
+  },
+  "17": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "4",
+    "s6": "3"
+  },
+  "18": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "4",
+    "s6": "4"
+  },
+  "19": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "5",
+    "s5": "5",
+    "s6": "4"
+  },
+  "20": {
+    "s0": "6",
+    "s1": "6",
+    "s2": "6",
+    "s3": "6",
+    "s4": "6",
+    "s5": "5",
+    "s6": "5"
+  }
+}
+data.WitchwarperCount = {
   "1": {
     "s0": "4",
     "s1": "2",
@@ -4266,6 +4449,11 @@ var app = new Vue({
           return false;
         }
       }
+      if(spell.witchwarper != undefined) {
+        if(charClass.toLowerCase() == 'witchwarper') {
+          return false;
+        }
+      }
       return true;
     },
     returnRemainingSpellCount: function(count,charIndex,level) {
@@ -4327,6 +4515,7 @@ var app = new Vue({
         this.levels[i].state = true;
         this.showMystic = true;
         this.showTechno = true;
+        this.showWitch = true;
       }
     },
     showNone: function() {
@@ -4334,6 +4523,7 @@ var app = new Vue({
         this.levels[i].state = false;
         this.showMystic = false;
         this.showTechno = false;
+        this.showWitch = false;
       }
     },
     includeFromFormInput: function(index) {
@@ -4351,10 +4541,14 @@ var app = new Vue({
         if(this.showTechno == true) { this.showTechno = false; }
         else { this.showTechno = true; }
       }
+      else if(input == 'witchwarper') {
+        if(this.showWitch == true) { this.showWitch = false; }
+        else { this.showWitch = true; }
+      }
       else { console.log('Error: unknown Class supplied to toggleClass() method.'); }
     },
     warnClassSelection: function() {
-      if(!this.showMystic && !this.showTechno) { return true; } else return false;
+      if(!this.showMystic && !this.showTechno && !this.showWitch) { return true; } else return false;
     },
     warnLevelSelection: function() {
       for(var i in this.levels) {
@@ -4373,11 +4567,13 @@ var app = new Vue({
       else { displaySearch = true; } //form is blank, so don't filter on a search term
       var displayMystic = false;
       var displayTechno = false;
+      var displayWitch = false;
       var displayLevel = false;
       if(this.spells[index].mystic != undefined && this.showMystic) { displayMystic = true; }
       if(this.spells[index].technomancer != undefined && this.showTechno) { displayTechno = true; }
+      if(this.spells[index].witchwarper != undefined && this.showWitch) { displayWitch = true; }
       if(this.displaySpellLevel(this.spells[index].level)) { displayLevel = true; }
-      if(displaySearch && displayLevel && (displayMystic || displayTechno)) {
+      if(displaySearch && displayLevel && (displayMystic || displayTechno || displayWitch)) {
         return true;
       }
       else return false;
