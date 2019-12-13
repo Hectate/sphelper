@@ -613,7 +613,8 @@ data.spells =
       "school": "Divination",
       "source": "Core Rulebook",
       "page": "p.340",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Arcing Surge",
@@ -694,7 +695,8 @@ data.spells =
       "page": "p.341",
       "resistance": "No",
       "target": "Up to (CASTERLEVEL) creatures no two of which can be more than 30 ft. apart",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Call Cosmos",
@@ -726,7 +728,8 @@ data.spells =
       "page": "p.342",
       "resistance": "Yes",
       "target": "One creature or object",
-      "technomancer": "2"
+      "technomancer": "2",
+      "witchwarper": "2"
     },
     {
       "name": "Chain Surge",
@@ -758,7 +761,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.342",
       "resistance": "Yes",
-      "target": "One living creature"
+      "target": "One living creature",
+      "witchwarper": "3"
     },
     {
       "name": "Charm Person",
@@ -774,7 +778,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.342",
       "resistance": "Yes",
-      "target": "One humanoid creature"
+      "target": "One humanoid creature",
+      "witchwarper": "1"
     },
     {
       "name": "Clairaudience/Clairvoyance",
@@ -791,7 +796,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.342",
       "resistance": "No",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Command",
@@ -866,7 +872,8 @@ data.spells =
       "school": "Divination",
       "source": "Core Rulebook",
       "page": "p.344",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Confusion",
@@ -885,7 +892,8 @@ data.spells =
       "target": "15-ft.-radius burst",
       "related":{
         "1":["Confusion (Lesser)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Confusion (Lesser)",
@@ -904,7 +912,8 @@ data.spells =
       "target": "One living creature",
       "related": {
         "4":["Confusion"]
-      }
+      },
+      "witchwarper": "1"
     },
     {
       "name": "Contact Other Plane",
@@ -918,7 +927,8 @@ data.spells =
       "school": "Divination",
       "source": "Core Rulebook",
       "page": "p.344",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Control Gravity",
@@ -935,7 +945,8 @@ data.spells =
       "page": "p.345",
       "resistance": "Yes",
       "target": "Up to (CASTERLEVEL/2) ten-foot cubes [S]",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Control Machines",
@@ -1000,7 +1011,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.346",
       "resistance": "Yes",
-      "target": "20-ft.-radius spread"
+      "target": "20-ft.-radius spread",
+      "witchwarper": "4"
     },
     {
       "name": "Creation (Level 4)",
@@ -1019,7 +1031,8 @@ data.spells =
       "technomancer": "4",
       "related":{
         "5":["Creation (Level 5)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Creation (Level 5)",
@@ -1038,7 +1051,8 @@ data.spells =
       "technomancer": "5",
       "related": {
         "4":["Creation (Level 4)"]
-      }
+      },
+      "witchwarper": "5"
     },
     {
       "name": "Crush Skull",
@@ -1054,7 +1068,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.347",
       "resistance": "Yes",
-      "target": "One living creature"
+      "target": "One living creature",
+      "witchwarper": "5"
     },
     {
       "name": "Dancing Lights",
@@ -1070,7 +1085,8 @@ data.spells =
       "page": "p.347",
       "resistance": "No",
       "target": "Up to four lights",
-      "technomancer": "0"
+      "technomancer": "0",
+      "witchwarper": "0"
     },
     {
       "name": "Darkvision",
@@ -1104,7 +1120,8 @@ data.spells =
       "page": "p.347",
       "resistance": "Yes",
       "target": "One humanoid creature of CR 3 or lower",
-      "technomancer": "0"
+      "technomancer": "0",
+      "witchwarper": "0"
     },
     {
       "name": "Daze Monster",
@@ -1121,7 +1138,8 @@ data.spells =
       "page": "p.347",
       "resistance": "Yes",
       "target": "One living creature of CR 5 or lower",
-      "technomancer": "2"
+      "technomancer": "2",
+      "witchwarper": "2"
     },
     {
       "name": "Death Ward",
@@ -1203,7 +1221,8 @@ data.spells =
       "page": "p.348",
       "resistance": "No",
       "target": "Cone-shaped emanation",
-      "technomancer": "0"
+      "technomancer": "0",
+      "witchwarper": "0"
     },
     {
       "name": "Detect Radiation",
@@ -1252,7 +1271,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.349",
       "resistance": "No",
-      "target": "Cone-shaped emanation"
+      "target": "Cone-shaped emanation",
+      "witchwarper": "1"
     },
     {
       "name": "Dimension Door",
@@ -1268,7 +1288,8 @@ data.spells =
       "page": "p.349",
       "resistance": "No yes (object)",
       "target": "You and touched objects or touched willing or unconscious creatures",
-      "technomancer": "4"
+      "technomancer": "4",
+      "witchwarper": "4"
     },
     {
       "name": "Discern Lies",
@@ -1330,7 +1351,8 @@ data.spells =
       "school": "Illusion",
       "source": "Core Rulebook",
       "page": "p.350",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Disintegrate",
@@ -1346,7 +1368,8 @@ data.spells =
       "page": "p.350",
       "resistance": "Yes",
       "target": "One creature or object or up to a 10-ft. cube of nonliving matter",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Dismissal (Level 4)",
@@ -1366,7 +1389,8 @@ data.spells =
       "technomancer": "4",
       "related": {
         "5":["Dismissal (Level 5)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Dismissal (Level 5)",
@@ -1386,7 +1410,8 @@ data.spells =
       "technomancer": "5",
       "related": {
         "4":["Dismissal (Level 4)"]
-      }
+      },
+      "witchwarper": "5"
     },
     {
       "name": "Dispel Magic",
@@ -1403,7 +1428,8 @@ data.spells =
       "page": "p.351",
       "resistance": "No",
       "target": "One creature object spell or spellcaster",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Dispel Magic (Greater)",
@@ -1420,7 +1446,8 @@ data.spells =
       "page": "p.352",
       "resistance": "No",
       "target": "One creature object spell or spellcaster; or a 20-ft.-radius burst",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Displacement",
@@ -1436,7 +1463,8 @@ data.spells =
       "page": "p.352",
       "resistance": "Yes (harmless)",
       "target": "One creature",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Divination",
@@ -1513,7 +1541,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.353",
       "resistance": "No",
-      "target": "All creatures in 40-ft. radius burst"
+      "target": "All creatures in 40-ft. radius burst",
+      "witchwarper": "6"
     },
     {
       "name": "Entropic Grasp",
@@ -1529,7 +1558,8 @@ data.spells =
       "page": "p.353",
       "resistance": "No",
       "target": "One nonmagical manufactured object (or the volume of the object within a 3-ft.-radius of the touched point) or one manufactured creature touched each round",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Erase",
@@ -1545,7 +1575,8 @@ data.spells =
       "page": "p.353",
       "resistance": "No",
       "target": "One written data set",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Ethereal Jaunt",
@@ -1559,7 +1590,8 @@ data.spells =
       "school": "Transmutation",
       "source": "Core Rulebook",
       "page": "p.354",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Explosive Blast",
@@ -1575,7 +1607,8 @@ data.spells =
       "page": "p.354",
       "resistance": "Yes",
       "target": "20-ft.-radius burst",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Fatigue",
@@ -1591,7 +1624,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.354",
       "resistance": "Yes",
-      "target": "One creature"
+      "target": "One creature",
+      "witchwarper": "0"
     },
     {
       "name": "Fear (Level 1)",
@@ -1612,7 +1646,8 @@ data.spells =
         "2":["Fear (Level 2)"],
         "3":["Fear (Level 3)"],
         "4":["Fear (Level 4)"]
-      }
+      },
+      "witchwarper": "1"
     },
     {
       "name": "Fear (Level 2)",
@@ -1633,7 +1668,8 @@ data.spells =
         "1":["Fear (Level 1)"],
         "3":["Fear (Level 3)"],
         "4":["Fear (Level 4)"]
-      }
+      },
+      "witchwarper": "2"
     },
     {
       "name": "Fear (Level 3)",
@@ -1654,7 +1690,8 @@ data.spells =
         "1":["Fear (Level 1)"],
         "2":["Fear (Level 2)"],
         "4":["Fear (Level 4)"]
-      }
+      },
+      "witchwarper": "3"
     },
     {
       "name": "Fear (Level 4)",
@@ -1675,7 +1712,8 @@ data.spells =
         "1":["Fear (Level 1)"],
         "2":["Fear (Level 2)"],
         "3":["Fear (Level 3)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Feeblemind",
@@ -1707,7 +1745,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.355",
       "resistance": "Yes",
-      "target": "One creature"
+      "target": "One creature",
+      "witchwarper": "6"
     },
     {
       "name": "Flight (Level 1)",
@@ -1730,7 +1769,8 @@ data.spells =
         "4":["Flight (Level 4)"],
         "5":["Flight (Level 5)"],
         "6":["Flight (Level 6)"]
-      }
+      },
+      "witchwarper": "1"
     },
     {
       "name": "Flight (Level 2)",
@@ -1753,7 +1793,8 @@ data.spells =
         "4":["Flight (Level 4)"],
         "5":["Flight (Level 5)"],
         "6":["Flight (Level 6)"]
-      }
+      },
+      "witchwarper": "2"
     },
     {
       "name": "Flight (Level 3)",
@@ -1776,7 +1817,8 @@ data.spells =
         "4":["Flight (Level 4)"],
         "5":["Flight (Level 5)"],
         "6":["Flight (Level 6)"]
-      }
+      },
+      "witchwarper": "3"
     },
     {
       "name": "Flight (Level 4)",
@@ -1799,7 +1841,8 @@ data.spells =
         "3":["Flight (Level 3)"],
         "5":["Flight (Level 5)"],
         "6":["Flight (Level 6)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Flight (Level 5)",
@@ -1822,7 +1865,8 @@ data.spells =
         "3":["Flight (Level 3)"],
         "4":["Flight (Level 4)"],
         "6":["Flight (Level 6)"]
-      }
+      },
+      "witchwarper": "5"
     },
     {
       "name": "Flight (Level 6)",
@@ -1845,7 +1889,8 @@ data.spells =
         "3":["Flight (Level 3)"],
         "4":["Flight (Level 4)"],
         "5":["Flight (Level 5)"]
-      }
+      },
+      "witchwarper": "6"
     },
     {
       "name": "Fog Cloud",
@@ -1862,7 +1907,8 @@ data.spells =
       "page": "p.356",
       "resistance": "No",
       "target": "20-ft.-radius spread",
-      "technomancer": "2"
+      "technomancer": "2",
+      "witchwarper": "2"
     },
     {
       "name": "Force Blast",
@@ -1878,7 +1924,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.356",
       "resistance": "Yes",
-      "target": "Cone-shaped burst"
+      "target": "Cone-shaped burst",
+      "witchwarper": "2"
     },
     {
       "name": "Ghost Sound",
@@ -1895,7 +1942,8 @@ data.spells =
       "page": "p.356",
       "resistance": "No",
       "target": "Illusory sounds",
-      "technomancer": "0"
+      "technomancer": "0",
+      "witchwarper": "0"
     },
     {
       "name": "Grave Words",
@@ -1911,7 +1959,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.357",
       "resistance": "No",
-      "target": "One dead creature"
+      "target": "One dead creature",
+      "witchwarper": "0"
     },
     {
       "name": "Gravitational Singularity",
@@ -1943,7 +1992,8 @@ data.spells =
       "page": "p.357",
       "resistance": "No",
       "target": "One 10-ft. square or one object",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Handy Junkbot",
@@ -1980,7 +2030,8 @@ data.spells =
       "page": "p.358",
       "resistance": "Yes (harmless)",
       "target": "Up to (CASTERLEVEL) creatures no two of which can be more than 30 ft. apart",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Healing Junkbot",
@@ -2035,7 +2086,8 @@ data.spells =
       "target": "One living creature",
       "related":{
         "2":["Hold Person"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Hold Person",
@@ -2054,7 +2106,8 @@ data.spells =
       "target": "One humanoid creature",
       "related":{
         "4":["Hold Monster"]
-      }
+      },
+      "witchwarper": "2"
     },
     {
       "name": "Hold Portal",
@@ -2070,7 +2123,8 @@ data.spells =
       "page": "p.359",
       "resistance": "No",
       "target": "One portal up to (CASTERLEVEL*20) sq. ft.",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Hologram Memory",
@@ -2273,7 +2327,8 @@ data.spells =
       "page": "p.361",
       "resistance": "No",
       "target": "One magic or technological object",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Implant Data",
@@ -2395,7 +2450,8 @@ data.spells =
       "related":{
         "4":["Invisibility (Greater)"],
         "6":["Invisibility (Mass)"]
-      }
+      },
+      "witchwarper": "2"
     },
     {
       "name": "Invisibility (Greater)",
@@ -2415,7 +2471,8 @@ data.spells =
       "related":{
         "2":["Invisibility"],
         "6":["Invisibility (Mass)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Invisibility (Mass)",
@@ -2435,7 +2492,8 @@ data.spells =
       "related":{
         "2":["Invisibility"],
         "4":["Invisibility (Greater)"]
-      }
+      },
+      "witchwarper": "6"
     },
     {
       "name": "Irradiate",
@@ -2452,7 +2510,8 @@ data.spells =
       "page": "p.362",
       "resistance": "No",
       "target": "10-ft.-radius spread; see text",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Jolting Surge",
@@ -2468,7 +2527,8 @@ data.spells =
       "page": "p.363",
       "resistance": "Yes",
       "target": "One creature or object",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Keen Senses",
@@ -2501,7 +2561,8 @@ data.spells =
       "page": "p.363",
       "resistance": "No",
       "target": "One door container or portal with an area of up to (CASTERLEVEL*10) sq. ft.",
-      "technomancer": "2"
+      "technomancer": "2",
+      "witchwarper": "2"
     },
     {
       "name": "Life Bubble",
@@ -2518,7 +2579,8 @@ data.spells =
       "page": "p.363",
       "resistance": "Yes",
       "target": "Up to (CASTERLEVEL) creatures no two of which can be more than 30 ft. apart",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Logic Bomb",
@@ -2566,7 +2628,8 @@ data.spells =
       "page": "p.364",
       "resistance": "Yes (harmless object)",
       "target": "One object of up to (CASTERLEVEL) bulk or one construct of any size",
-      "technomancer": "2"
+      "technomancer": "2",
+      "witchwarper": "2"
     },
     {
       "name": "Mending",
@@ -2582,7 +2645,8 @@ data.spells =
       "page": "p.364",
       "resistance": "Yes (harmless object)",
       "target": "One object of up to 1 bulk",
-      "technomancer": "0"
+      "technomancer": "0",
+      "witchwarper": "0"
     },
     {
       "name": "Microbot Assault",
@@ -2797,7 +2861,8 @@ data.spells =
       "school": "Illusion",
       "source": "Core Rulebook",
       "page": "p.366",
-      "technomancer": "2"
+      "technomancer": "2",
+      "witchwarper": "2"
     },
     {
       "name": "Mislead",
@@ -2813,7 +2878,8 @@ data.spells =
       "page": "p.366",
       "resistance": "No",
       "target": "One illusory double",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Modify Memory",
@@ -2829,7 +2895,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.366",
       "resistance": "Yes",
-      "target": "One living creature"
+      "target": "One living creature",
+      "witchwarper": "5"
     },
     {
       "name": "Mystic Cure (Level 1)",
@@ -3049,7 +3116,8 @@ data.spells =
       "page": "p.367",
       "resistance": "Yes",
       "target": "Cone-shaped burst",
-      "technomancer": "1"
+      "technomancer": "1",
+      "witchwarper": "1"
     },
     {
       "name": "Overload Systems",
@@ -3081,7 +3149,8 @@ data.spells =
       "page": "p.368",
       "resistance": "No",
       "target": "5-ft.-by-8-ft. opening",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Planar Barrier",
@@ -3098,7 +3167,8 @@ data.spells =
       "page": "p.368",
       "resistance": "Yes",
       "target": "(CASTERLEVEL) sixty-foot cubes [S]",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Planar Binding (Level 4)",
@@ -3119,7 +3189,8 @@ data.spells =
       "related":{
         "5":["Planar Binding (Level 5)"],
         "6":["Planar Binding (Level 6)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Planar Binding (Level 5)",
@@ -3140,7 +3211,8 @@ data.spells =
       "related":{
         "4":["Planar Binding (Level 4)"],
         "6":["Planar Binding (Level 6)"]
-      }
+      },
+      "witchwarper": "5"
     },
     {
       "name": "Planar Binding (Level 6)",
@@ -3161,7 +3233,8 @@ data.spells =
       "related":{
         "4":["Planar Binding (Level 4)"],
         "5":["Planar Binding (Level 5)"]
-      }
+      },
+      "witchwarper": "6"
     },
     {
       "name": "Plane Shift",
@@ -3178,7 +3251,8 @@ data.spells =
       "page": "p.369",
       "resistance": "Yes",
       "target": "One creature or up to eight willing or unconscious creatures",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Private Sanctum",
@@ -3194,7 +3268,8 @@ data.spells =
       "page": "p.369",
       "resistance": "No",
       "target": "(CASTERLEVEL) thirty-foot cubes [S]",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Probability Prediction",
@@ -3207,7 +3282,8 @@ data.spells =
       "school": "Divination",
       "source": "Core Rulebook",
       "page": "p.369",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Prying Eyes",
@@ -3256,7 +3332,8 @@ data.spells =
       "page": "p.370",
       "resistance": "No",
       "target": "One unattended object of no more than 10 lbs. or 1 bulk",
-      "technomancer": "0"
+      "technomancer": "0",
+      "witchwarper": "0"
     },
     {
       "name": "Psychokinetic Strangulation",
@@ -3288,7 +3365,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.370",
       "resistance": "Yes (harmless)",
-      "target": "One dead creature"
+      "target": "One dead creature",
+      "witchwarper": "5"
     },
     {
       "name": "Rapid Repair",
@@ -3304,7 +3382,8 @@ data.spells =
       "page": "p.371",
       "resistance": "Yes (harmless object)",
       "target": "One construct or weapon",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Ray of Exhaustion",
@@ -3320,7 +3399,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.371",
       "resistance": "Yes",
-      "target": "One creature"
+      "target": "One creature",
+      "witchwarper": "3"
     },
     {
       "name": "Recharge",
@@ -3381,7 +3461,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.372",
       "resistance": "Yes (harmless)",
-      "target": "One dead creature"
+      "target": "One dead creature",
+      "witchwarper": "4"
     },
     {
       "name": "Remove Affliction",
@@ -3397,7 +3478,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.373",
       "resistance": "Yes (harmless object)",
-      "target": "One creature or object"
+      "target": "One creature or object",
+      "witchwarper": "3"
     },
     {
       "name": "Remove Condition",
@@ -3417,7 +3499,8 @@ data.spells =
       "related":{
         "1":["Remove Condition (Lesser)"],
         "5":["Remove Condition (Greater)"]
-      }
+      },
+      "witchwarper": "2"
     },
     {
       "name": "Remove Condition (Greater)",
@@ -3437,7 +3520,8 @@ data.spells =
       "related":{
         "1":["Remove Condition (Lesser)"],
         "2":["Remove Condition"]
-      }
+      },
+      "witchwarper": "5"
     },
     {
       "name": "Remove Condition (Lesser)",
@@ -3457,7 +3541,8 @@ data.spells =
       "related":{
         "2":["Remove Condition"],
         "5":["Remove Condition (Greater)"]
-      }
+      },
+      "witchwarper": "1"
     },
     {
       "name": "Remove Radioactivity",
@@ -3474,7 +3559,8 @@ data.spells =
       "page": "p.374",
       "resistance": "Yes (harmless object)",
       "target": "One creature or object or one 20-ft.-radius area",
-      "technomancer": "4"
+      "technomancer": "4",
+      "witchwarper": "4"
     },
     {
       "name": "Resilient Sphere",
@@ -3490,7 +3576,8 @@ data.spells =
       "page": "p.374",
       "resistance": "Yes",
       "target": "One Large or smaller creature",
-      "technomancer": "4"
+      "technomancer": "4",
+      "witchwarper": "4"
     },
     {
       "name": "Resistant Aegis",
@@ -3507,7 +3594,8 @@ data.spells =
       "page": "p.374",
       "resistance": "Yes (harmless)",
       "target": "Up to 10 creatures wearing armor within range",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Resistant Armor",
@@ -3528,7 +3616,8 @@ data.spells =
       "related":{
         "3":["Resistant Armor (Lesser)"],
         "6":["Resistant Armor (Greater)"]
-      }
+      },
+      "witchwarper": "4"
     },
     {
       "name": "Resistant Armor (Greater)",
@@ -3549,7 +3638,8 @@ data.spells =
       "related":{
         "3":["Resistant Armor (Lesser)"],
         "4":["Resistant Armor"]
-      }
+      },
+      "witchwarper": "6"
     },
     {
       "name": "Resistant Armor (Lesser)",
@@ -3570,7 +3660,8 @@ data.spells =
       "related":{
         "4":["Resistant Armor"],
         "6":["Resistant Armor (Greater)"]
-      }
+      },
+      "witchwarper": "3"
     },
     {
       "name": "Restoration",
@@ -3689,7 +3780,8 @@ data.spells =
       "school": "Divination",
       "source": "Core Rulebook",
       "page": "p.376",
-      "technomancer": "2"
+      "technomancer": "2",
+      "witchwarper": "2"
     },
     {
       "name": "Shadow Walk",
@@ -3706,7 +3798,8 @@ data.spells =
       "page": "p.376",
       "resistance": "Yes (object)",
       "target": "Up to (CASTERLEVEL) Medium creatures or vehicles",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Shadowy Fleet",
@@ -3771,7 +3864,8 @@ data.spells =
       "page": "p.377",
       "resistance": "Yes",
       "target": "Up to (CASTERLEVEL) creatures no two of which can be more than 30 ft. apart",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Snuff Life",
@@ -3819,7 +3913,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.378",
       "resistance": "No",
-      "target": "One dead creature"
+      "target": "One dead creature",
+      "witchwarper": "3"
     },
     {
       "name": "Spider Climb",
@@ -3868,7 +3963,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.379",
       "resistance": "Yes (harmless)",
-      "target": "Up to (CASTERLEVEL/3) living creatures touched"
+      "target": "Up to (CASTERLEVEL/3) living creatures touched",
+      "witchwarper": "2"
     },
     {
       "name": "Subjective Reality",
@@ -3881,7 +3977,8 @@ data.spells =
       "range": "Personal",
       "school": "Illusion",
       "source": "Core Rulebook",
-      "page": "p.379"
+      "page": "p.379",
+      "witchwarper": "6"
     },
     {
       "name": "Suggestion",
@@ -3900,7 +3997,8 @@ data.spells =
       "target": "One living creature",
       "related":{
         "6":["Suggestion (Mass)"]
-      }
+      },
+      "witchwarper": "3"
     },
     {
       "name": "Suggestion (Mass)",
@@ -4115,7 +4213,8 @@ data.spells =
       "page": "p.381",
       "resistance": "No yes (object)",
       "target": "You and touched objects and other touched willing or unconscious creatures",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Terraform",
@@ -4148,7 +4247,8 @@ data.spells =
       "page": "p.382",
       "resistance": "Yes",
       "target": "See text",
-      "technomancer": "0"
+      "technomancer": "0",
+      "witchwarper":"0"
     },
     {
       "name": "Tongues",
@@ -4165,7 +4265,8 @@ data.spells =
       "page": "p.383",
       "resistance": "No",
       "target": "One creature",
-      "technomancer": "3"
+      "technomancer": "3",
+      "witchwarper": "3"
     },
     {
       "name": "Transfer Charge",
@@ -4198,7 +4299,8 @@ data.spells =
       "page": "p.383",
       "resistance": "Yes (harmless)",
       "target": "One creature",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Unseen Servant",
@@ -4230,7 +4332,8 @@ data.spells =
       "page": "p.383",
       "resistance": "Yes",
       "target": "One creature with CR lower than (CASTERLEVEL); see text",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Veil",
@@ -4246,7 +4349,8 @@ data.spells =
       "page": "p.384",
       "resistance": "Yes see text",
       "target": "Up to one or more creatures no two of which can be more than 30 ft. apart",
-      "technomancer": "6"
+      "technomancer": "6",
+      "witchwarper": "6"
     },
     {
       "name": "Vision",
@@ -4275,7 +4379,8 @@ data.spells =
       "page": "p.384",
       "resistance": "Yes",
       "target": "Wall up to (CASTERLEVEL*20) ft. long or a ring with a radius up to (CASTERLEVEL/2*5) ft.; either form 20 ft. high",
-      "technomancer": "4"
+      "technomancer": "4",
+      "witchwarper": "4"
     },
     {
       "name": "Wall of Force",
@@ -4291,7 +4396,8 @@ data.spells =
       "page": "p.384",
       "resistance": "No",
       "target": "Wall with area up to (CASTERLEVEL) ten-foot squares",
-      "technomancer": "5"
+      "technomancer": "5",
+      "witchwarper": "5"
     },
     {
       "name": "Wall of Steel",
@@ -4355,7 +4461,8 @@ data.spells =
       "source": "Core Rulebook",
       "page": "p.385",
       "resistance": "No",
-      "target": "One distracting glowing servant"
+      "target": "One distracting glowing servant",
+      "witchwarper": "1"
     },
     {
       "name": "Zone of Truth",

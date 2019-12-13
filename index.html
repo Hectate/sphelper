@@ -64,7 +64,7 @@
               <b-button disabled variant="info" v-else>Toggle classes</b-button>
               <b-button variant="primary" :pressed="showMystic" @click="toggleClass('mystic')">Mystic</b-button>
               <b-button variant="primary" :pressed="showTechno" @click="toggleClass('technomancer')">Technomancer</b-button>
-              <b-button disabled variant="primary" :pressed="showWitch" @click="toggleClass('witchwarper')">Witchwarper</b-button>
+              <b-button variant="primary" :pressed="showWitch" @click="toggleClass('witchwarper')">Witchwarper</b-button>
             </b-button-group></b-list-item>
             <b-list-item class="p-1"><b-button-group>
               <b-button disabled variant="danger" v-if="warnLevelSelection()">Toggle levels</b-button>
