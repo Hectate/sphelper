@@ -1,4 +1,4 @@
-# Spells to get added from non-CRB sources
+# Spells to get added from non-CRB/COM sources
 * Summon Creature
 * Control Atmosphere
 * Digital Doorway
@@ -23,11 +23,13 @@
 * Dimensional Anchor
 * Mind Swap
 
-Above does not include spells from COM, which will be added also
 
 # Useful stuff to add
 * ~~Witchwarper class support~~ DONE
-* Witchwarper spell list
-* Summon Creature helper
+* ~~Update existing spells with witchwarper levels~~ DONE
+* ~~Helper utility to load new spells into JSON~~ DONE
+* COM unique spells including Witchwarper WIP
+* Resort spells alphabetically once all are in
+* Summon Creature helper?
 * Update spells to have _usable_ stats (duration, etc) if possible
 * Export/Import via JSON files

@@ -114,6 +114,7 @@
                 >
                 <b-list-group flush>
                   <b-list-group-item variant="secondary" v-if="item.castingTime != undefined"><b>Casting Time</b> {{item.castingTime}}</b-list-group-item>
+                  <b-list-group-item variant="secondary" v-if="item.area != undefined"><b>Area</b> {{item.area}}</b-list-group-item>
                   <b-list-group-item variant="secondary" v-if="item.range != undefined"><b>Range</b> {{item.range}}</b-list-group-item>
                   <b-list-group-item variant="secondary" v-if="item.target != undefined"><b>Target</b> {{item.target}}</b-list-group-item>
                   <b-list-group-item variant="secondary" v-if="item.effect != undefined"><b>Effect</b> {{item.effect}}</b-list-group-item>
