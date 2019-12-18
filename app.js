@@ -1,6 +1,29 @@
 var unsaved = false;
 var data = {
-  application:{majorVer:'0',minorVer:'8'},
+  application:{
+    majorVer:'0',
+    minorVer:'8',
+    changelog: [
+      {
+        version:'v0.7',
+        date:'18-DEC-2019',
+        changes: [
+          'Witchwarper class support',
+          'Witchwarper added to all relevant CRB spells',
+          'All and None buttons for spell levels'
+        ]
+      },
+      {
+        version:'v0.6',
+        date:'31-JAN-2018',
+        changes: [
+          'Initial Public Release',
+          'Mystic and Technomancer classes',
+          'Core Rulebook spells and spell lists'
+        ]
+      }
+    ]
+  },
   page:'intro',
   levels: {
     "0":{name:"0",state:false},
@@ -4647,6 +4670,16 @@ var app = new Vue({
         this.showMystic = false;
         this.showTechno = false;
         this.showWitch = false;
+      }
+    },
+    showAllLevels: function() {
+      for(var i in this.levels) {
+        this.levels[i].state = true;
+      }
+    },
+    showNoneLevels: function() {
+      for(var i in this.levels) {
+        this.levels[i].state = false;
       }
     },
     includeFromFormInput: function(index) {

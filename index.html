@@ -38,21 +38,18 @@
         >
           <p>This tool is designed to permit convenient viewing of spells from Starfinder, as well as provide some tools to make using those spells easier in your Starfinder games.</p>
           <p><i>Version {{application.majorVer}}.{{application.minorVer}}</i> | Author: Nathaniel 'Hectate' Mitchell | Released under MIT license, 2018-2019</p>
-          <p><b-link href="https://github.com/Hectate/sphelper"><img src="Github-Mark-32px.png"> View on Github</b-link></p>
-          <b-button v-b-toggle.changelog variant="primary">View Changelog</b-button>
+          <b-button size="md" v-b-toggle.changelog variant="primary">View Changelog</b-button>
+          <b-button size="md" variant="outline-dark" href="https://github.com/Hectate/sphelper"><img width="24" height="24" src="Github-Mark-32px.png"> Github repository</b-button>
           <b-collapse id="changelog">
-              <dl>
-                <dt>v0.8 : ??? 20XX</dt>
-                <dd>Added Witchwarper class support</dd>
-                <dt>v0.6 : Jan 31, 2018</dt>
-                <dd>Initial Public Release</dd>
-                <dd>Mystic and Technomancer class support, spell lists, list builder, etc</dd>
-              </dl>
+            <b-card v-for="(item, index) in application.changelog" :title="item.version" :sub-title="item.date">
+              <ul>
+                <li v-for="change in item.changes">{{change}}</li>
+              </ul>
+            </b-card>
           </b-collapse>
         </b-jumbotron>
         <div v-if="page == 'list'">
           <b-card bg-variant="light">
-          <p>By default, the entire list is hidden. You may include/exclude specific levels or classes with the options below, or simply press All, to view spells. You can also search by spell name. The search is not case-sensitive, and will locate a matching patterns within the name (e.g. all that contain 'mind' in the name, not just those that start with 'mind'). The search is still reduced by the filters applied.</p>
             <b-list-group>
             <b-list-item class="p-1"><b-button-group>
               <b-button disabled variant="info">Show</b-button>
@@ -72,6 +69,8 @@
               <b-button variant="primary" v-for="item in levels" :pressed.sync="item.state" :key="item.name">
                 {{item.name}}
               </b-button>
+              <b-button variant="outline-primary" @click="showAllLevels()">All</b-button>
+              <b-button variant="outline-primary" @click="showNoneLevels()">None</b-button>
             </b-button-group></b-list-item>
             <b-list-item class="p-1">
               <b-form inline  @keydown.enter.prevent="" @keyup.enter="searchSpells">
@@ -142,10 +141,27 @@
         </div>
         <div v-if="page == 'builder'">
           <b-card bg-variant="light">
-            <p>The List Builder helps you maintain a collection of known spells for a spellcaster. To get started, create a new list and fill in the blanks. Once the builder has enough information, it will allow you to begin selecting appropriate spells. If the character has multiple classes, please keep in mind the difference between caster level and character level.</p>
-            <p>Clicking Save Characters will store your selections in your browser's Local Storage; it is not yet possible to export/import, or carry existing setups to other devices (e.g. computer to phone). If there is a major version difference between what you have saved the characters as, the data will not be loaded (and it will be over-written by clicking Save Characters!).</p>
-          <b-btn @click="addCharacter()" variant="primary">Add character</b-btn>
-          <b-btn @click="saveData()" variant="primary">Save Characters</b-btn>
+            <b-button size="sm" v-b-toggle.builderhelp variant="outline-info">Help</b-button>
+              <b-collapse id="builderhelp" class="my-1">
+                <b-card class="my-1">
+                <p>The List Builder helps you maintain a collection of known spells for a spellcaster. To get started, click <b>Add Character</b> and fill in the blanks on the <b>Character Info</b> tab. Once the builder has enough information, it will allow you to begin selecting appropriate spells in the <b>Spell Selector</b> tab. If the character has multiple classes, please keep in mind the difference between caster level and character level. Sphelper was not built with multi-classing in mind, sorry. Once you have all your known spells selected, you can then use the <b>Daily Spell Management</b> tab on the character to track your use of spells during play (not implemented yet).</p>
+                <p>Clicking <b>Local Save</b> will store your selections in your browser's Local Storage. This does <i>not</i> transfer to other devices (e.g. computer to phone).</p>
+                <p>You can export character data with the <b>Export All</b> and <b>Export Character</b> buttons/menu. This prompts you to save a JSON file to your local device with the relevant information. You can share this JSON file with other people or send it to other devices to use the saved data there with the <b>Import Character(s)</b> button to select the file and load it.</p>
+                <p> If there is a <i>major</i>> version difference between what you have saved the characters as, the data will not be loaded (and it will be over-written by clicking Save Characters!). If this is a concern for you, it is recommended that you download the files to run this locally instead so an update does not cause any data to be lost.</p>
+                <p>If there is a <i>minor</i> version difference, the system will alert you to the change but allow the data to be loaded. In this case, it is recommended that you review the changelog for changes relevant to your character(s). You should also examine your character(s) for any discrepancies or issues.</p>
+              </b-card>
+            </b-collapse>
+            <b-btn @click="addCharacter()" variant="success">Add character</b-btn>
+            <b-btn @click="saveData()" variant="primary">Local Save</b-btn>
+            <b-button-group>
+              <b-btn variant="secondary" >Import Character(s)</b-btn>
+            </b-button-group>
+            <b-button-group>
+              <b-btn variant="secondary" >Export All</b-btn>
+              <b-dropdown text="Export Character">
+                <b-dropdown-item v-for="(item, index) in characters">{{item.name}} ({{item.id}})</b-dropdown-item>
+              </b-dropdown>
+            </b-button-group>
           </b-card>
           <div v-for="(item, index) in characters" class="py-1">
             <b-card bg-variant="defult" border-variant="primary"
@@ -217,8 +233,9 @@
                       </b-collapse>
                     </b-list-group-item>
                 </b-tab>
-                <b-tab title="Known Spell List">
-                  <p>Known Spell management will go here; someday!</p>
+                <b-tab title="Daily Spell Management">
+                  <p>Daily Spell Management will go here; someday!</p>
+                  <p>Note to self: Remember to implement spell cache, counts for bonus spells per day, and marking off spell slots used. Calculate spell DCs, durations, and anything else. Include a "reset" button for when characters take a full rest to regain all spell slots.</p>
                 </b-tab>
             </b-card>
           </div>
