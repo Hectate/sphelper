@@ -36,9 +36,9 @@
           lead="('sfelper' aka. Spell-Helper) Useful utilities for using spells in Starfinder."
         >
           <p>This tool is designed to permit convenient viewing of spells from Starfinder, as well as provide some tools to make using those spells easier in your Starfinder games.</p>
-          <p><i>Version {{application.majorVer}}.{{application.minorVer}}</i> | Author: Nathaniel 'Hectate' Mitchell | Released under MIT license, 2018-2019</p>
+          <p><i>Version {{application.majorVer}}.{{application.minorVer}}</i> | Author: Nathaniel 'Hectate' Mitchell | Released under MIT license, with content from </p>
           <b-button size="md" v-b-toggle.changelog variant="primary">View Changelog</b-button>
-          <b-button size="md" variant="outline-dark" href="https://github.com/Hectate/sphelper"><img width="24" height="24" src="Github-Mark-32px.png"> Github repository</b-button>
+          <b-button size="md" variant="outline-dark" href="https://github.com/Hectate/sphelper"><img width="24" height="24" src="./Github-Mark-32px.png"> Github repository</b-button>
           <b-collapse id="changelog">
             <b-card v-for="(item, index) in application.changelog" :title="item.version" :sub-title="item.date">
               <ul>
