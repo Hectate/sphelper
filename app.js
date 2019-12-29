@@ -5,12 +5,21 @@ var data = {
     minorVer:'8',
     changelog: [
       {
+        version:'v0.8',
+        date:'27-DEC-2019',
+        changes: [
+          'Many spells added from non-CRB sources',
+          'Changed some display formatting of spells'
+        ]
+      },
+      {
         version:'v0.7',
         date:'18-DEC-2019',
         changes: [
           'Witchwarper class support',
           'Witchwarper added to all relevant CRB spells',
-          'All and None buttons for spell levels'
+          'All and None buttons for spell levels',
+          'Added (non-working) import-export buttons'
         ]
       },
       {
@@ -593,6 +602,7 @@ data.WitchwarperCount = {
 data.spells =
   [
     {
+      "notes": "This is a test",
       "name": "Animate Armor",
       "shortText": "Briefly control a suit of armor",
       "castingTime": "1 round",

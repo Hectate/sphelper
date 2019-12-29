@@ -110,6 +110,7 @@
                   v-bind:footer="item.source + ' ' + item.page"
                 >
                 <b-list-group flush>
+                  <b-list-group-item variant="warning" v-if="item.note != undefined"><b>{{item.notes}}</b></b-list-group-item>
                   <b-list-group-item variant="secondary" v-if="item.school != undefined"><b>School</b> {{item.school}}</b-list-group-item>
                   <b-list-group-item variant="secondary" v-if="item.castingTime != undefined"><b>Casting Time</b> {{item.castingTime}}</b-list-group-item>
                   <b-list-group-item variant="secondary" v-if="item.area != undefined"><b>Area</b> {{item.area}}</b-list-group-item>
